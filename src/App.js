@@ -1,5 +1,6 @@
 import React from 'react';
 import logo from './logo.svg';
+import Card from './Card';
 import './App.css';
 
 function resetBoard()
@@ -13,7 +14,7 @@ function App() {
       <h3> 0:00 </h3> {/*timer component goes here*/}
       <table>
         <tr>
-          <td> test </td> {/*card component goes in <td> slots*/}
+          <Card/> {/*card component goes in <td> slots*/}
           <td> test </td>
           <td> test </td>
           <td> test </td>
