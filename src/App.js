@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './Card';
+import Timer from'./Timer';
 import './App.css';
 
 function resetBoard()
@@ -10,7 +11,7 @@ function resetBoard()
 function App() {
   return (
     <div className="App">
-      <Timer/> {/*timer component goes here*/}
+      <Timer/> 
       <table>
         <tr>
           <Card/> 

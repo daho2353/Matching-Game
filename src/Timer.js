@@ -1,6 +1,6 @@
 import React from 'react';
 
-funtion Timer (props){
+function Timer (props){
 
 	return(
 		<h3> 0:00 </h3>
