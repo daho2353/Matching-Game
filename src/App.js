@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import Card from './Card';
 import './App.css';
 
@@ -11,21 +10,21 @@ function resetBoard()
 function App() {
   return (
     <div className="App">
-      <h3> 0:00 </h3> {/*timer component goes here*/}
+      <Timer/> {/*timer component goes here*/}
       <table>
         <tr>
-          <Card/> {/*card component goes in <td> slots*/}
-          <td> test </td>
-          <td> test </td>
-          <td> test </td>
-          <td> test </td>
+          <Card/> 
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
         </tr>
         <tr>
-          <td> test </td>
-          <td> test </td>
-          <td> test </td>
-          <td> test </td>
-          <td> test </td>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/>
+          <Card/> 
         </tr>
       </table>
       <button onClick={() => resetBoard(/*put setState hook here*/)}> Reset </button> 
