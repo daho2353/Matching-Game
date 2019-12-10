@@ -4,7 +4,7 @@ import React from 'react';
 function Card(props) {	
 	var cardColor; 
 
-	switch() {
+	switch(cardColor = 6) {
 		case 0:
 			cardColor = 'red' ;
     		break;
