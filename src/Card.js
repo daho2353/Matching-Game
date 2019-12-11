@@ -4,18 +4,17 @@ import React, { Component } from 'react';
 
 class Card extends Component {
 	constructor (props) {
-		super (props); 
+		super (props); // props include card state (0,1,2) and card id (1-5)
 		
 		this.state = {
-			cardColor: 'black'
+			cardColor: 'black' // background color changes making it a state
 		}
 	}
 	render () {
-		console.log(this.props.cardState);
 
-		if (this.props.cardState == 0) {
+		if (this.props.cardState == 0) { // card is unflipped 
 			this.setState({cardColor: 'black'}); 
-		}else if (this.props.cardState == 1) {
+		}else if (this.props.cardState == 1) { // card is flipped and based on Id a color is assigned
 			switch(this.state.cardColor = this.props.cardId) {
 				case 0:
 				this.setState({cardColor: 'red'});
@@ -33,7 +32,7 @@ class Card extends Component {
 				this.setState({cardColor: 'orange'});
 				break; 
 			}
-		}else {
+		}else {  // two cards have matched
 			this.setState({cardColor:'white'}); 
 		}
 		return (
