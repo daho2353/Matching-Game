@@ -1,45 +1,47 @@
-import React from 'react'; 
+import React, { Component } from 'react'; 
 
-	var cardColor; 
-	//var cardState;
-	var cardId = 6; 
 
-	function cardState () {
 
-		cardColor = 'white'; 
+class Card extends Component {
+	constructor (props) {
+		super (props); 
+		
+		this.state = {
+			cardColor: 'black'
+		}
 	}
+	render () {
+		console.log(this.props.cardState.cardState);
 
-	function Card(props) {	
-
-		switch(cardColor = cardId) {
-			case 0:
-			cardColor = 'red';
-			break;
-			case 1:
-			cardColor = 'yellow'; 
-			break;
-			case 2: 
-			cardColor = 'blue';
-			break; 
-			case 3: 
-			cardColor = 'green'; 
-			break; 
-			case 4: 
-			cardColor = 'gray'; 
-			break; 
-			case 5: 
-			cardColor = 'white';
-			break; 
-			case 6: 
-			cardColor = 'black';
-			break; 
+		if (this.props.cardState.cardState == 0) {
+			this.setState({cardColor: 'black'}); 
+		}else if (this.props.cardState.cardState == 1) {
+			switch(this.cardColor = this.props.cardState.cardId) {
+				case 0:
+				this.setState.cardColor = 'red';
+				break;
+				case 1:
+				this.setState.cardColor = 'yellow'; 
+				break;
+				case 2: 
+				this.setState.cardColor = 'blue';
+				break; 
+				case 3: 
+				this.setState.cardColor = 'green'; 
+				break; 
+				case 4: 
+				this.setState.cardColor = 'gray'; 
+				break; 
+			}
+		}else {
+			this.setState.cardColor({cardColor:'white'}); 
 		}
 
 		return (
-
-			<td onClick={() => cardState()} style ={{backgroundColor: cardColor, border: 'solid 1px white' }}></td>
-
+			<td style ={{backgroundColor: this.cardColor, border: 'solid 1px white' }}></td>
 			);
 	}
+}
+
 
 export default Card; 
