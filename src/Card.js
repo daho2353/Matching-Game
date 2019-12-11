@@ -11,12 +11,12 @@ class Card extends Component {
 		}
 	}
 	render () {
-		console.log(this.props.cardState.cardState);
+		console.log(this.props.cardState);
 
-		if (this.props.cardState.cardState == 0) {
+		if (this.props.cardState == 0) {
 			this.setState({cardColor: 'black'}); 
-		}else if (this.props.cardState.cardState == 1) {
-			switch(this.cardColor = this.props.cardState.cardId) {
+		}else if (this.props.cardState == 1) {
+			switch(this.cardColor = this.props.cardId) {
 				case 0:
 				this.setState.cardColor = 'red';
 				break;
