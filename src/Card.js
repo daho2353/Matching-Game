@@ -18,25 +18,24 @@ class Card extends Component {
 		}else if (this.props.cardState == 1) {
 			switch(this.cardColor = this.props.cardId) {
 				case 0:
-				this.setState.cardColor = 'red';
+				this.setState({cardColor: 'red'});
 				break;
 				case 1:
-				this.setState.cardColor = 'yellow'; 
+				this.setState({cardColor: 'yellow'});
 				break;
 				case 2: 
-				this.setState.cardColor = 'blue';
+				this.setState({cardColor: 'blue'});
 				break; 
 				case 3: 
-				this.setState.cardColor = 'green'; 
+				this.setState({cardColor: 'green'});
 				break; 
 				case 4: 
-				this.setState.cardColor = 'gray'; 
+				this.setState({cardColor: 'orange'});
 				break; 
 			}
 		}else {
-			this.setState.cardColor({cardColor:'white'}); 
+			this.setState({cardColor:'white'}); 
 		}
-
 		return (
 			<td style ={{backgroundColor: this.cardColor, border: 'solid 1px white' }}></td>
 			);
