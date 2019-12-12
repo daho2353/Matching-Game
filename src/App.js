@@ -49,28 +49,31 @@ function flipCard(cardId, cards, setCards, timerOn, setTimerOn, canClick, setCan
   }
   else //if flip card is found
   {
-    cards[cardId].flipped = true; //flip second card
-    if(cards[cardId].color === previousCard.color) //if they have the same color set match to true
+    if(!cards[cardId].flipped) //makes sure you aren't clicking a card that has already been clicked
     {
-      cards[cardId].matched = true; 
-      previousCard.matched = true;
-      setCards([...cards]);
-      if(_.every(cards, {matched:true})) //if all cards are matched
+      cards[cardId].flipped = true; //flip second card
+      if(cards[cardId].color === previousCard.color) //if they have the same color set match to true
       {
-        setVictory(currentTime); //set highscore
-        setTimerOn(false); //stop timer
-      }
-    }
-    else //wait then set match to false
-    {
-      setCanClick(false); //make it so users can't click until timer is over
-      setCards([...cards]);
-      setTimeout(() => {
-        setCanClick(true); //make it so users can click again
-        cards[cardId].flipped = false; //unflip
-        previousCard.flipped = false;
+        cards[cardId].matched = true; 
+        previousCard.matched = true;
         setCards([...cards]);
-      }, 1000);
+        if(_.every(cards, {matched:true})) //if all cards are matched
+        {
+          setVictory(currentTime); //set highscore
+          setTimerOn(false); //stop timer
+        }
+      }
+      else //wait then set match to false
+      {
+        setCanClick(false); //make it so users can't click until timer is over
+        setCards([...cards]);
+        setTimeout(() => {
+          setCanClick(true); //make it so users can click again
+          cards[cardId].flipped = false; //unflip
+          previousCard.flipped = false;
+          setCards([...cards]);
+        }, 1000);
+      }
     }
   }
 }

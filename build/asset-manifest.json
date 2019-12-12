@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/~daho2353/fwd/Project2/static/css/main.4181e125.chunk.css",
+    "main.js": "/~daho2353/fwd/Project2/static/js/main.95d463f9.chunk.js",
+    "main.js.map": "/~daho2353/fwd/Project2/static/js/main.95d463f9.chunk.js.map",
+    "runtime-main.js": "/~daho2353/fwd/Project2/static/js/runtime-main.f110b924.js",
+    "runtime-main.js.map": "/~daho2353/fwd/Project2/static/js/runtime-main.f110b924.js.map",
+    "static/js/2.8cd555a9.chunk.js": "/~daho2353/fwd/Project2/static/js/2.8cd555a9.chunk.js",
+    "static/js/2.8cd555a9.chunk.js.map": "/~daho2353/fwd/Project2/static/js/2.8cd555a9.chunk.js.map",
+    "index.html": "/~daho2353/fwd/Project2/index.html",
+    "precache-manifest.d5197effffd65fc86619363bfbf281a0.js": "/~daho2353/fwd/Project2/precache-manifest.d5197effffd65fc86619363bfbf281a0.js",
+    "service-worker.js": "/~daho2353/fwd/Project2/service-worker.js",
+    "static/css/main.4181e125.chunk.css.map": "/~daho2353/fwd/Project2/static/css/main.4181e125.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f110b924.js",
+    "static/js/2.8cd555a9.chunk.js",
+    "static/css/main.4181e125.chunk.css",
+    "static/js/main.95d463f9.chunk.js"
+  ]
+}
