@@ -5,18 +5,13 @@ function Timer (props){
 const [currentTime, setCurrentTime] = useState(0);
 const [isActive, setIsActive] = useState(false);
 
-	if (props.startTimer == true){
-   	setIsActive = true;
+	if (props.TimerOn === true){
+   	setIsActive(true);
    }
 
-   if (props.stopTimer == true){
-
-   	setIsActive = false;
+   if (props.TimerOn === false){
+   	setIsActive(false);
    }
-
-  
-
-
 
   useEffect(() => {
     let interval = null;
@@ -30,8 +25,6 @@ const [isActive, setIsActive] = useState(false);
     }
     return () => clearInterval(interval);
   }, [isActive, currentTime]);
-
-
 
   return (
     <div>
