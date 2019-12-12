@@ -3,9 +3,9 @@ import Card from './Card';
 import Timer from'./Timer';
 import './App.css';
 import { useState, useEffect } from 'react';
-import _ from 'lodash';
+import _ from 'lodash'; //lodash library gives you many useful commands
 
-const possibleCards = 
+const possibleCards = //object of possible cards
 [
   { color : 'red', flipped: false, matched:false},
   { color : 'red', flipped: false, matched:false},
@@ -19,24 +19,24 @@ const possibleCards =
   { color : 'orange', flipped: false, matched:false }
 ]
 
-function resetBoard(setCards, setTimerOn)
+function resetBoard(setCards, setTimerOn) //stops timer and shuffles deck
 {
   setCards(shuffleCards());
   setTimerOn(false);
 }
 
-function shuffleCards()
+function shuffleCards() //shuffles deck
 {
   return _.cloneDeep(_.shuffle(possibleCards)); //clones the object so original remains in tact
 }
 
 function flipCard(cardId, cards, setCards, timerOn, setTimerOn, canClick, setCanClick, currentTime, setVictory)
 {
-  if(!canClick)
+  if(!canClick) //makes it so users can't click on cards when cards are already flipped
   {
     return;
   }
-  if(timerOn === false)
+  if(timerOn === false) //starts the timer if timer is not on
   {
     setTimerOn(true);
   }
@@ -44,7 +44,7 @@ function flipCard(cardId, cards, setCards, timerOn, setTimerOn, canClick, setCan
   if(!previousCard) //if no card is flipped
   {
     cards[cardId].flipped = true; //flip first card
-    previousCard = cards[cardId];
+    previousCard = cards[cardId]; 
     setCards([...cards]); //setState
   }
   else //if flip card is found
@@ -55,19 +55,19 @@ function flipCard(cardId, cards, setCards, timerOn, setTimerOn, canClick, setCan
       cards[cardId].matched = true; 
       previousCard.matched = true;
       setCards([...cards]);
-      if(_.every(cards, {matched:true}))
+      if(_.every(cards, {matched:true})) //if all cards are matched
       {
-        setVictory(currentTime);
-        setTimerOn(false);
+        setVictory(currentTime); //set highscore
+        setTimerOn(false); //stop timer
       }
     }
     else //wait then set match to false
     {
-      setCanClick(false);
+      setCanClick(false); //make it so users can't click until timer is over
       setCards([...cards]);
       setTimeout(() => {
-        setCanClick(true);
-        cards[cardId].flipped = false;
+        setCanClick(true); //make it so users can click again
+        cards[cardId].flipped = false; //unflip
         previousCard.flipped = false;
         setCards([...cards]);
       }, 1000);
@@ -75,7 +75,7 @@ function flipCard(cardId, cards, setCards, timerOn, setTimerOn, canClick, setCan
   }
 }
 
-function VictoryTime(props)
+function VictoryTime(props) //mini component that displays the high score
 {
   if(props.time !== 0 )
   {
@@ -92,13 +92,13 @@ function VictoryTime(props)
 }
 
 function App() {
-  const[cards, setCards] = useState(shuffleCards()); 
-  const[victory, setVictory] = useState(0); 
-  const[timerOn, setTimerOn] = useState(false);
-  const[canClick, setCanClick] = useState(true);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [timer, setTimer] = useState(null);
-  useEffect(() => {    
+  const[cards, setCards] = useState(shuffleCards()); //The deck of cards and it's values
+  const[victory, setVictory] = useState(0);  // High score time
+  const[timerOn, setTimerOn] = useState(false); // timer on/off
+  const[canClick, setCanClick] = useState(true); // can interact with board on/off
+  const [currentTime, setCurrentTime] = useState(0); // timer value
+  const [timer, setTimer] = useState(null);// timer display
+  useEffect(() => {    //Israel's code
     if (timerOn && !timer) 
     {
       setTimer( setInterval(() => {
@@ -112,7 +112,7 @@ function App() {
       setTimer(null);
     }
   });
-  return (
+  return ( //JSX below
     <div className="App">
       <Timer currentTime = {currentTime}/> 
       <table>
