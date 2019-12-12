@@ -115,8 +115,26 @@ function App() {
       setTimer(null);
     }
   });
+
+  var buttonStyle = {
+  fontSize: "1.5em", 
+  fontFamily: "Courier New"
+};
+
+var titleStyle = {
+  fontSize: "4em",
+  fontFamily: "Courier New"
+}
+var descriptionStyle = {
+  fontSize: "1em",
+  marginBottom: "50px",
+  fontFamily: "Courier New"
+}
+
   return ( //JSX below
     <div className="App">
+    <h1 style={titleStyle}>Card Match</h1>
+    <h2 style={descriptionStyle}>Flip and match the same color cards to clear the board as fast as possible!</h2>
       <Timer currentTime = {currentTime}/> 
       <table>
         <tr>
@@ -134,7 +152,7 @@ function App() {
           <Card card = {cards[9]} onClick={() => flipCard(9, cards, setCards, timerOn, setTimerOn, canClick, setCanClick, currentTime, setVictory)}/> 
         </tr>
       </table>
-      <button onClick={() => resetBoard(setCards, setTimerOn)}> Reset </button> 
+      <button onClick={() => resetBoard(setCards, setTimerOn)} style={buttonStyle} > Reset </button> 
       <VictoryTime time = {victory}/>
     </div>
   );
