@@ -1,38 +1,12 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect} from 'react';
 
 
 function Timer (props){
-const [currentTime, setCurrentTime] = useState(0);
-const [isActive, setIsActive] = useState(false);
-
-	if (props.TimerOn === true){
-   	setIsActive(true);
-   }
-
-   if (props.TimerOn === false){
-   	setIsActive(false);
-   }
-
-  useEffect(() => {
-    let interval = null;
-
-    if (isActive) {
-      interval = setInterval(() => {
-        setCurrentTime(currentTime => currentTime + 1);
-      }, 1000);
-    } else if (!isActive && currentTime !== 0) {
-      clearInterval(interval);
-    }
-    return () => clearInterval(interval);
-  }, [isActive, currentTime]);
-
   return (
     <div>
-      <div> {currentTime}s </div>
+      <div> {props.currentTime}s </div>
     </div>
   )
-	
-
 }
 
 export default Timer; 
